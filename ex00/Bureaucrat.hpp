@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:06:45 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/10/27 19:55:04 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/07 14:27:16 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,37 +19,32 @@
 
 class Bureaucrat
 {
-    const std::string _name;
-    int grade;
-    public:
-        Bureaucrat();
-        Bureaucrat(std::string name, int grade);
-        Bureaucrat(const Bureaucrat &object);
-        Bureaucrat &operator=(const Bureaucrat &object);
-        ~Bureaucrat();
-        std::string getName()const;
-        int getGrade()const;
-        void incrementGrade();
-        void decrementGrade();
-
-        class GradeTooHighException : public std::exception
-        {
-            public:
-                virtual const char* what() const throw()
-				{
-					return ("Error: Grade is too high.");
-				}
-
-        };
-        class GradeTooLowException : public std::exception
-        {
-            public:
-                virtual const char* what() const throw()
-				{
-					return ("Error: Grade is too low.");
-				}
-
-        };
+	const std::string _name;
+	int _grade;
+	public:
+		Bureaucrat();
+		Bureaucrat(std::string name, int grade);
+		Bureaucrat(const Bureaucrat &object);
+		Bureaucrat &operator=(const Bureaucrat &object);
+		~Bureaucrat();
+		void setName(std::string name);
+		std::string getName()const;
+		void setGrade(int grade);
+		int getGrade()const;
+		void incrementGrade();
+		void decrementGrade();
+		// We make a user-defined exception class and inherit it from the exception class.
+		// We use the virtual function to overload the what() function and return the exception.
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
 };
 
 // This operator overload needs 2 operands bc global and not inside class
