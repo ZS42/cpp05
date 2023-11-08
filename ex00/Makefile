@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+         #
+#    By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/27 18:54:07 by zsyyida           #+#    #+#              #
-#    Updated: 2023/11/08 09:10:17 by zsyyida          ###   ########.fr        #
+#    Updated: 2023/11/08 13:48:02 by zsyyida          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
-clean: $(RM) $(OBJS)
+clean:
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)

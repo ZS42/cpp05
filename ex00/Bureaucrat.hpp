@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:06:45 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/08 09:08:47 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/08 14:50:09 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+// can put # pragma once for include guards
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
@@ -19,7 +19,7 @@
 
 class Bureaucrat
 {
-	const std::string _name;
+	std::string const _name;
 	int _grade;
 	public:
 		Bureaucrat();
@@ -27,7 +27,7 @@ class Bureaucrat
 		Bureaucrat(const Bureaucrat &object);
 		Bureaucrat &operator=(const Bureaucrat &object);
 		~Bureaucrat();
-		// void setName(std::string name);
+		void setName(std::string name);
 		std::string getName()const;
 		// void setGrade(int grade);
 		int getGrade()const;
