@@ -6,7 +6,7 @@
 /*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:06:45 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/08 14:50:09 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/08 15:06:39 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Bureaucrat
 		~Bureaucrat();
 		void setName(std::string name);
 		std::string getName()const;
-		// void setGrade(int grade);
+		void setGrade(int grade);
 		int getGrade()const;
 		void incrementGrade();
 		void decrementGrade();

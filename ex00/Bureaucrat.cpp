@@ -6,7 +6,7 @@
 /*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:35:42 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/08 15:00:47 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/08 15:06:32 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ Bureaucrat::Bureaucrat(): _name("name"), _grade(100)
 Bureaucrat::Bureaucrat(std::string name, int grade): _name(name), _grade(grade)
 {
 		setName(name);
-		// setGrade(grade);
-		// this->grade = getGrade();
+		setGrade(grade);
 		if (grade < 1)
 			throw (Bureaucrat::GradeTooHighException());
 		if (grade > 150)
@@ -102,6 +101,12 @@ void Bureaucrat::setName(std::string name)
 {
 	const_cast<std::string&>(this->_name) = name;
 }
+
+void Bureaucrat::setGrade(int grade)
+{
+	this->_grade = grade;
+}
+
 // For simple things like int can pass dirctly otherwise pass parameters of overload as reference
 std::ostream &operator<<(std::ostream& os, const Bureaucrat& rhs )
 {
