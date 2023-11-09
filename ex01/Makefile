@@ -6,7 +6,7 @@
 #    By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/27 18:54:07 by zsyyida           #+#    #+#              #
-#    Updated: 2023/11/09 13:30:36 by zsyyida          ###   ########.fr        #
+#    Updated: 2023/11/09 13:30:44 by zsyyida          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ RM = rm -rf
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 
-SRCS = main.cpp Bureaucrat.cpp
+SRCS = main.cpp Bureaucrat.cpp Form.cpp
 
 OBJS := $(SRCS:.cpp=.o)
 
