@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:42:59 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/09 23:00:42 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/10 10:33:12 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 const char* Form::GradeTooHighException ::what() const throw()
 {
-	return ("Grade is too high.");
+	return ("Bureacrat grade is too high.");
 }
 
 const char* Form::GradeTooLowException ::what() const throw()
 {
-	return ("Grade is too low.");
+	return ("Bureaucrat grade is too low.");
 }
 
 Form::Form() : _name("name"), _signStatus(0), _gradeSign(1), _gradeExecute(2)
@@ -37,6 +37,7 @@ Form::Form(std::string name, bool a, int b, int c) : _name(name), _signStatus(a)
 		throw(Form::GradeTooHighException());
 	else if (_gradeSign > 150 || _gradeExecute > 150)
 		throw(Form::GradeTooLowException());
+
 	std::cout << Form::getFormName() << " form parametric constructor called." << std::endl;
 }
 
@@ -46,7 +47,7 @@ Form::Form(const Form &object): _name(object._name), _signStatus(object._signSta
 	std::cout << "Form copy constructor called." << std::endl;
 }
 
-Form &Form::operator=(const Form &object) 
+Form &Form::operator=(const Form &object)
 {
 	if (this != &object)
 	{
@@ -106,16 +107,15 @@ void Form::setGradeExecute(const int gradeExecute)
 
 void Form::beSigned(Bureaucrat& bureaucrat)
 {
-		std::cout << this->getSignStatus();
 	if (this->getSignStatus() != true)
 	{
-		if (bureaucrat.getGrade() >= this->getGradeSign())
+		bureaucrat.signForm(*this);
+		if (bureaucrat.getGrade() <= this->getGradeSign())
 		{
 			this->setSignStatus(true);
-			bureaucrat.signForm(*this);
 		}
-		else
-			throw (Form::GradeTooLowException());
+		// else
+			// throw (Form::GradeTooLowException());
 	}
 }
 

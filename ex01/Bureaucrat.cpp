@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:35:42 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/09 22:54:41 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/10 10:34:43 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,12 +111,14 @@ void Bureaucrat::signForm(Form& form)
 {
 	try
 	{
-		// form.beSigned(*this);
-		std::cout << this->_name << " signed " << form.getFormName() << std::endl;
+		if (this->getGrade() <= form.getGradeSign())
+			std::cout << this->_name << " signed " << form.getFormName() << std::endl;
+		else
+			throw (Form::GradeTooLowException());
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << this->_name << " couldn't sign [" << form.getFormName() << "] because " << e.what() << '\n';
+		std::cerr << this->_name << " couldn't sign form [" << form.getFormName() << "] because " << e.what() << '\n';
 	}
 }
 
