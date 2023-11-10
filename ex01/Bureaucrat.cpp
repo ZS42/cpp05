@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:35:42 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/09 13:55:54 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/09 22:54:41 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void Bureaucrat::decrementGrade()
 	{
 		(this->_grade)++;
 		if (this->_grade > 150)
-			throw GradeTooLowException();/* code */
+			throw GradeTooLowException();
 	}
 	catch (std::exception & e)
 	{
@@ -107,14 +107,17 @@ void Bureaucrat::setGrade(int grade)
 	this->_grade = grade;
 }
 
-void Bureaucrat::signForm()
+void Bureaucrat::signForm(Form& form)
 {
-	if()
-		std::cout << Bureaucrat.getName() << " signed " << Form.getName() << std::endl;
-	else if ()
-		std::cout << Bureaucrat.getName() << " couldn't sign " << Form.getName() << " because " << " grade too high." << std::endl;
-	else
-		std::cout << Bureaucrat.getName() << " couldn't sign " << Form.getName() << " because " << " grade too low." << std::endl;
+	try
+	{
+		// form.beSigned(*this);
+		std::cout << this->_name << " signed " << form.getFormName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << this->_name << " couldn't sign [" << form.getFormName() << "] because " << e.what() << '\n';
+	}
 }
 
 // For simple things like int can pass dirctly otherwise pass parameters of overload as reference

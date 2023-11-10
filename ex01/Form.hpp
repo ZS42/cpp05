@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:25:44 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/09 15:16:51 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/09 22:47:58 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,11 @@
 
 #include <iostream>
 #include <string>
-#include <exception>
+#include <stdexcept>
 #include "Bureaucrat.hpp"
+
+class Bureaucrat; //since Form and Bureaucrat class are cross referencing each other
+
 
 class Form
 {
@@ -30,9 +33,9 @@ class Form
 		Form(const Form &object);
 		Form &operator=(const Form &object);
 		~Form();
-		void beSigned(Bureaucrat);
-		std::string getFormName();
-		bool getSignStatus();
+		void beSigned(Bureaucrat& bureaucrat);
+		std::string getFormName() const;
+		bool getSignStatus() const;
 		int getGradeSign() const;
 		int getGradeExecute() const;
 		void setFormName(std::string name);
@@ -53,6 +56,6 @@ class Form
 
 // This operator overload needs 2 operands bc global and not inside class
 // rhs means right hand side
-std::ostream &operator<<( std::ostream& os, const Bureaucrat& rhs );
+std::ostream &operator<<( std::ostream& os, const Form& rhs );
 
 #endif

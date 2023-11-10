@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:36:52 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/09 15:08:53 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/09 23:28:27 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ int main()
 {
 	try
 	{
-		Form Application;
-		// std::cout << B << std::endl;
+		Bureaucrat("Cindy", 25);
+		Form A("Application", false, 2  0, 50);
+		std::cout << A << std::endl;
 
 	}
 	catch(const std::exception& e)

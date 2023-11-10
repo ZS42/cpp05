@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:35:42 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/08 15:06:32 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/09 22:31:37 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void Bureaucrat::decrementGrade()
 	{
 		(this->_grade)++;
 		if (this->_grade > 150)
-			throw GradeTooLowException();/* code */
+			throw GradeTooLowException();
 	}
 	catch (std::exception & e)
 	{

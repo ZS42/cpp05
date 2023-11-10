@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:06:45 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/09 13:53:54 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/09 22:47:16 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <iostream>
 #include <stdexcept>
 #include "Form.hpp"
+
+class Form; //since Form and Bureaucrat class are cross referencing each other
 
 class Bureaucrat
 {
@@ -34,7 +36,7 @@ class Bureaucrat
 		int getGrade()const;
 		void incrementGrade();
 		void decrementGrade();
-		void signForm();
+		void signForm(Form &form);
 		// We make a user-defined exception class and inherit it from the exception class.
 		// We use the virtual function to overload the what() function and return the exception.
 		class GradeTooHighException : public std::exception
