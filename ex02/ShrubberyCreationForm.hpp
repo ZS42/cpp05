@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 00:28:50 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/13 00:55:35 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/13 13:31:58 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SHRUBBERYCREATIONFORM_HPP
 
 #include "AForm.hpp"
+#include <fstream> //to open, read and write froma file
 
 class ShrubberyCreationForm : public AForm
 {

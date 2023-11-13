@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:06:45 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/13 00:22:57 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/13 13:40:10 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <stdexcept>
 #include "AForm.hpp"
 
-class Form; //since Form and Bureaucrat class are cross referencing each other
+class AForm; //since Form and Bureaucrat class are cross referencing each other
 
 class Bureaucrat
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:25:44 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/13 00:25:46 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/13 13:41:05 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,6 @@ class AForm
 
 // This operator overload needs 2 operands bc global and not inside class
 // rhs means right hand side
-std::ostream &operator<<( std::ostream& os, const Form& rhs );
+std::ostream &operator<<( std::ostream& os, const AForm& rhs );
 
 #endif
