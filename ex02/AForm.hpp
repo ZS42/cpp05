@@ -6,7 +6,7 @@
 /*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:25:44 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/13 13:41:05 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/15 15:05:46 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ class AForm
 		void setSignStatus(bool signStatus);
 		void setGradeSign(const int gradeSign);
 		void setGradeExecute(const int gradeExecute);
+		bool	canExecute(const Bureaucrat& bureaucrat);
 		// making it equal to zero makes it a pure virtual function
         // and makes the class abstract so it cant be instantiated
 		virtual void execute(Bureaucrat const & executor) const = 0;
@@ -56,6 +57,17 @@ class AForm
 			public:
 				virtual const char* what() const throw();
 		};
+		class UnsignedException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+		class AlreadySignedException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+
 };
 
 // This operator overload needs 2 operands bc global and not inside class

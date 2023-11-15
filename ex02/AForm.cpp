@@ -6,11 +6,21 @@
 /*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:42:59 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/13 13:49:52 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/15 16:49:20 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
+
+const char* AForm::UnsignedException ::what() const throw()
+{
+	return ("Form not signed.");
+}
+
+const char* AForm::AlreadySignedException ::what() const throw()
+{
+	return ("Form already signed.");
+}
 
 const char* AForm::GradeTooHighException ::what() const throw()
 {
@@ -114,13 +124,25 @@ void AForm::beSigned(Bureaucrat& bureaucrat)
 		{
 			this->setSignStatus(true);
 		}
-		// else
-			// throw (Form::GradeTooLowException());
+		else
+			throw (AForm::AlreadySignedException());
 	}
+}
+
+bool	AForm::canExecute(Bureaucrat const& bureaucrat)
+{
+	if (this->getSignStatus() != true)
+	{
+		throw(AForm::UnsignedException());
+	}
+	if (bureaucrat.getGrade() <= this-> getGradeExecute())
+		return (true);
+	else
+		return (false);
 }
 
 std::ostream &operator<<( std::ostream& os, const AForm& rhs )
 {
-	os << "AForm: [" << rhs.getFormName() << "] form sign grade: [" << rhs.getGradeSign() << "] form execute grade: [" << rhs.getGradeSign() << "] signed [" << rhs.getSignStatus() << "]";
+	os << "AForm: [" << rhs.getFormName() << "] form sign grade: [" << rhs.getGradeSign() << "] form execute grade: [" << rhs.getGradeExecute() << "] signed [" << rhs.getSignStatus() << "]";
 	return (os);
 }

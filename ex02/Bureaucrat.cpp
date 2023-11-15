@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:35:42 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/13 00:22:14 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/15 16:41:54 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,12 +122,12 @@ void Bureaucrat::signForm(AForm& form)
 	}
 }
 
-void Bureaucrat::executeForm(AForm const & form)
+void Bureaucrat::executeForm(AForm const & form) const
 {
 	try
 	{
 		if (this->getGrade() <= form.getGradeExecute())
-			std::cout << this->_name << " execited " << form.getFormName() << std::endl;
+			std::cout << this->_name << " executed " << form.getFormName() << std::endl;
 		else
 			throw (AForm::GradeTooLowException());
 	}

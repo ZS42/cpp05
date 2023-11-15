@@ -6,7 +6,7 @@
 /*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 00:28:44 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/13 13:37:53 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/15 16:25:08 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("Shrubbery creation form", false, 145, 137)
 {
+	_target = target;
 	std::cout << "ShrubberyCreationForm parametric constructor called." << std::endl;
 }
 
@@ -27,7 +28,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 {
 	if (this != &object)
 	{
-		this->target = object.target;
+		this->_target = object._target;
 	}
 	std::cout << "ShrubberyCreationForm copy assignment operator called." << std::endl;
 	return (*this);
@@ -37,44 +38,40 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 	std::cout << "ShrubberyCreationForm destructor called." << std::endl;
 }
-
-void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
+std::string ShrubberyCreationForm::getTarget() const
 {
-	this->target = this->target.append("_shrubbery");
-	this->target.open(this->target, ios::out);
-	if (!this->target) {
-		cout << "File not created!";
-	}
-	else {
-		cout << "File created successfully!";
-				           _-_
-				    /~~   ~~\
-				 /~~         ~~\
-				{               }
-				 \  _-     -_  /
-				   ~  \\ //  ~
-				_- -   | | _- _
-				  _ -  | |   -_
-				      // \\
+	return(_target);
+}
 
-                         ****
-                         ********
-                        **  ******
-                         *   ******     ******
-                             ******   *********
-                              ****  *****   ***
-                              ***  ***     **
-                        *************       *
-                      ******************
-                     *****   H*****H*******
-                     ***     H-___-H  *********
-                      ***    H     H      *******
-                       **    H-___-H        *****
-                         *   H     H         ****
-                             H     H         ***
-                             H-___-H         **
-                             H     H         *
-                             H-___-H
-	my_file.close();
+void ShrubberyCreationForm::execute(Bureaucrat const & executor)const
+{
+	std::string filename = getTarget() + "_shrubbery";
+	std::ofstream file;
+	file.open(filename.c_str());
+	if (!file.is_open())
+		std::cerr << "File not created!";
+	else
+	{
+		file <<
+ 		"                 **** \n"
+        "               ******** \n"
+        "               **  ****** \n"
+        "                *   ******     ****** \n"
+        "                    ******   ********* \n"
+        "                     ****  *****   *** \n"
+        "                     ***  ***     ** \n"
+        "               *************       * \n"
+        "             ****************** \n"
+        "            *****   H*****H******* \n"
+        "            ***     H-___-H  ********* \n"
+        "             ***    H     H      ******* \n"
+        "              **    H-___-H        ***** \n"
+        "                *   H     H         **** \n"
+        "                    H     H         *** \n"
+        "                    H-___-H         ** \n"
+        "                    H     H         * \n"
+        "                    H-___-H";
+	file.close();
+	executor.executeForm(*this);
 	}
 }

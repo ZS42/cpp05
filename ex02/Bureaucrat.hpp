@@ -6,7 +6,7 @@
 /*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:06:45 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/13 13:40:10 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/15 16:23:49 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class Bureaucrat
 		void incrementGrade();
 		void decrementGrade();
 		void signForm(AForm &form);
-		void executeForm(AForm const & form);
+		void executeForm(AForm const & form) const;
 		// We make a user-defined exception class and inherit it from the exception class.
 		// We use the virtual function to overload the what() function and return the exception.
 		class GradeTooHighException : public std::exception
