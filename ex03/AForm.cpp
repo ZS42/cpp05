@@ -6,7 +6,7 @@
 /*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:42:59 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/19 23:10:20 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/19 22:35:12 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ AForm::AForm() : _name("name"), _signStatus(0), _gradeSign(1), _gradeExecute(2)
 		throw(AForm::GradeTooHighException());
 	else if (_gradeSign > 150 || _gradeExecute > 150)
 		throw(AForm::GradeTooLowException());
-	std::cout << "AForm default constructor called." << std::endl;
+	std::cout << "Form default constructor called." << std::endl;
 }
 
 AForm::AForm(std::string name, bool a, int b, int c) : _name(name), _signStatus(a), _gradeSign(b), _gradeExecute(c)
@@ -48,7 +48,7 @@ AForm::AForm(std::string name, bool a, int b, int c) : _name(name), _signStatus(
 	else if (_gradeSign > 150 || _gradeExecute > 150)
 		throw(AForm::GradeTooLowException());
 
-	std::cout << AForm::getFormName() << " parametric constructor called." << std::endl;
+	std::cout << AForm::getFormName() << " form parametric constructor called." << std::endl;
 }
 
 AForm::AForm(const AForm &object): _name(object._name), _signStatus(object._signStatus), _gradeSign(object._gradeSign), _gradeExecute(object._gradeExecute)
@@ -66,13 +66,13 @@ AForm &AForm::operator=(const AForm &object)
 		const_cast<int&>(this->_gradeSign) = object._gradeSign;
 		const_cast<int&>(this->_gradeExecute) = object._gradeExecute;
 	}
-	std::cout << "AForm copy assignment operator called." << std::endl;
+	std::cout << "Form copy assignment operator called." << std::endl;
 	return (*this);
 }
 
 AForm::~AForm()
 {
-	std::cout << "AForm destructor called." << std::endl;
+	std::cout << "Form destructor called." << std::endl;
 }
 
 std::string AForm::getFormName() const

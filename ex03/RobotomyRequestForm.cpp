@@ -6,11 +6,7 @@
 /*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 00:28:30 by zsyyida           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2023/11/21 12:01:15 by zsyyida          ###   ########.fr       */
-=======
 /*   Updated: 2023/11/19 20:24:05 by zsyyida          ###   ########.fr       */
->>>>>>> ae25108f2b2f2a300a77282e0b5f0e0b6181de99
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +42,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	std::cout << "some drilling noises" << std:: endl;
+    std::cout << "some drilling noises" << std:: endl;
     srand(time(NULL));
     int i = std::rand();
     if (i % 2 == 0)

@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 00:28:50 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/19 20:34:09 by zsyyida          ###   ########.fr       */
+/*   Created: 2023/11/13 00:27:56 by zsyyida           #+#    #+#             */
+/*   Updated: 2023/11/15 15:59:39 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-# define SHRUBBERYCREATIONFORM_HPP
+#pragma once
 
 #include "AForm.hpp"
 #include <fstream> //to open, read and write froma file
-#include <cstring>
+#include <string>
 
-class ShrubberyCreationForm : public AForm
+class PresidentialPardonForm : public AForm
 {
     std::string _target;
     public:
-		ShrubberyCreationForm(std::string target);
-		ShrubberyCreationForm(const ShrubberyCreationForm &object);
-		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &object);
-		~ShrubberyCreationForm();
+		PresidentialPardonForm(std::string target);
+		PresidentialPardonForm(const PresidentialPardonForm &object);
+		PresidentialPardonForm &operator=(const PresidentialPardonForm &object);
+		~PresidentialPardonForm();
         void execute(Bureaucrat const & executor) const;
 		std::string getTarget() const;
 };
-
-#endif
