@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 00:28:44 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/19 18:58:54 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/21 12:28:43 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("Shrubb
 	std::cout << "ShrubberyCreationForm parametric constructor called." << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &object)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &object): AForm("Shrubbery creation form", false, 145, 137)
 {
 	*this = object;
 	std::cout << "ShrubberyCreationForm copy constructor called" << std::endl;
@@ -52,7 +52,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor)const
 		std::cerr << "File not created!";
 	else
 	{
-		file << 
+		file <<
  		"                 **** \n"
         "               ******** \n"
         "               **  ****** \n"

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 00:28:30 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/19 20:24:05 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/21 12:29:07 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target): AForm("Robotomy Re
 	std::cout << "RobotomyRequestForm parametric constructor called." << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &object)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &object): AForm("Robotomy Request Form", false, 72, 45)
 {
 	*this = object;
 	std::cout << "RobotomyRequestForm copy constructor called" << std::endl;

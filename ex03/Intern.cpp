@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 22:43:12 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/21 11:19:54 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/21 14:17:36 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,15 +47,15 @@ AForm *makeShrubberyCreationForm(std::string target)
 
 AForm *makeRobotomyRequestForm(std::string target)
 {
-    return(new ShrubberyCreationForm(target));
+    return(new RobotomyRequestForm(target));
 }
 
 AForm *makePresidentialPardonForm(std::string target)
 {
-    return(new ShrubberyCreationForm(target));
+    return(new PresidentialPardonForm(target));
 }
 
-AForm *Intern::makeForm(std::string formName, std::string target) 
+AForm *Intern::makeForm(std::string formName, std::string target)
 {
     //declares an array of function pointers that takes std::string argument(refer ex06 in module01)
     AForm *(*fnForm[3])(std::string) = {&makeShrubberyCreationForm, &makeRobotomyRequestForm, &makePresidentialPardonForm};
@@ -63,46 +63,19 @@ AForm *Intern::makeForm(std::string formName, std::string target)
 
     // Make an array of all possible forms
     const std::string form[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
-    // Since switch statements only work with integers we need to convert the input strings to integers
     type = 0;
     try
     {
         while (type < 3 && form[type].compare(formName))
 	    	type++;
-        std::cout << "Intern creates " << formName << std::endl;
-        return ((fnForm[type])(target));
-        if (type == 2)
+        if (type == 3)
 			throw (Intern::InvalidFormException());
+        std::cout << BOLDBLUE << "Intern creates " << formName << " form" << RESET << std::endl;
+        return ((fnForm[type])(target));
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << BOLDBLUE << e.what() << RESET << '\n';
     }
-    
-    // while (type < 3 && form[type].compare(formName))
-    // {
-	// 	type++;
-    //     std::cout << "Intern creates " << formName << std::endl;
-    //     return ((fnForm[type])(target));
-    // }
-    // try
-    // {
-    //     std::cout << "Intern creates " << formName << std::endl;
-    //     switch (type)
-    //     {
-    //         case 0:
-    //             fnForm[0] = &makeShrubberyCreationForm(target);
-    //         case 1:
-    //             fnForm[1] = makeRobotomyRequestForm(target);
-    //         case 2:
-    //             fnForm[2] = makePresidentialPardonForm(target);
-    //     }
-    //     if (i == 2)
-	// 			throw (Intern::InvalidFormException());
-    // }            
-    // catch(const std::exception& e)
-    // {
-    //     std::cerr << e.what() << '\n';
-    // }
-    // return ((fnForm[type])(target));
+    return (NULL);
 }

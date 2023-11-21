@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:35:42 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/09 22:31:37 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/21 12:34:07 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void Bureaucrat::incrementGrade()
 	{
 		(this->_grade)--;
 		if (this->_grade < 1)
-			throw GradeTooHighException();{/* code */}
+			throw GradeTooHighException();
 	}
 	catch (std::exception & e)
 	{

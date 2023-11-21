@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:36:52 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/21 10:20:24 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/21 14:09:49 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,104 +20,56 @@
 // constructor it isn't constructed
 int main()
 {
-	Intern someRandomIntern;
-	Bureaucrat Z("Cindy", 5);
-	AForm* rrf;
-	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-	// std::cout << BOLDGREEN << "[WHEN CAN EXECUTE SHRUBBERY CREATION]" << RESET << std::endl;
-	// try
-	// {
-	// 	Bureaucrat Z("Cindy", 5);
-	// 	ShrubberyCreationForm A("Home");
-	// 	std::cout << BLUE << A << RESET << std::endl;
-	// 	A.beSigned(Z);
-	// 	A.execute(Z);
-	// 	std::cout << BLUE << A << RESET << std::endl;
-
-	// }
-	// catch(const std::exception& e)
-	// {
-	// 	std::cerr << "Error: " << e.what() << '\n';
-	// }
-
-	// std::cout << BOLDGREEN << "[WHEN CAN'T EXECUTE SHRUBBERY CREATION]" << RESET << std::endl;
-	// try
-	// {
-	// 	Bureaucrat Z("Candy", 138);
-	// 	ShrubberyCreationForm A("Home");
-	// 	std::cout << BLUE << A << RESET << std::endl;
-	// 	A.beSigned(Z);
-	// 	A.execute(Z);
-	// 	std::cout << BLUE << A << RESET << std::endl;
-
-	// }
-	// catch(const std::exception& e)
-	// {
-	// 	std::cerr << "Error: " << e.what() << '\n';
-	// }
-
-	// std::cout << BOLDGREEN << "[WHEN CAN EXECUTE PRESIDENTIAL PARDON]" << RESET << std::endl;
-	// try
-	// {
-	// 	Bureaucrat Y("Lawrence", 5);
-	// 	PresidentialPardonForm B("Murder");
-	// 	std::cout << BLUE << B << RESET << std::endl;
-	// 	B.beSigned(Y);
-	// 	B.execute(Y);
-	// 	std::cout << BLUE << B << RESET << std::endl;
-
-	// }
-	// catch(const std::exception& e)
-	// {
-	// 	std::cerr << "Error: " << e.what() << '\n';
-	// }
-
-	// std::cout << BOLDGREEN << "[WHEN CAN'T EXECUTE PRESIDENTIAL PARDON]" << RESET << std::endl;
-	// try
-	// {
-	// 	Bureaucrat Y("Larry", 6);
-	// 	PresidentialPardonForm B("Murder");
-	// 	std::cout << BLUE << B << RESET << std::endl;
-	// 	B.beSigned(Y);
-	// 	B.execute(Y);
-	// 	std::cout << BLUE << B << RESET << std::endl;
-
-	// }
-	// catch(const std::exception& e)
-	// {
-	// 	std::cerr << "Error: " << e.what() << '\n';
-	// }
-	
-	// std::cout << BOLDGREEN << "[WHEN CAN EXECUTE ROBOTOMY REQUEST]" << RESET << std::endl;
-	// try
-	// {
-	// 	Bureaucrat X("Patrick", 5);
-	// 	RobotomyRequestForm C("Droid");
-	// 	std::cout << BLUE << C << RESET << std::endl;
-	// 	C.beSigned(X);
-	// 	C.execute(X);
-	// 	std::cout << BLUE << C << RESET << std::endl;
-
-	// }
-	// catch(const std::exception& e)
-	// {
-	// 	std::cerr << "Error: " << e.what() << '\n';
-	// }
-
-	// std::cout << BOLDGREEN << "[WHEN CAN'T EXECUTE ROBOTOMY REQUEST]" << RESET << std::endl;
-	// try
-	// {
-	// 	Bureaucrat X("Patricia", 46);
-	// 	RobotomyRequestForm C("Droid");
-	// 	std::cout << BLUE << C << RESET << std::endl;
-	// 	C.beSigned(X);
-	// 	C.execute(X);
-	// 	std::cout << BLUE << C << RESET << std::endl;
-
-	// }
-	// catch(const std::exception& e)
-	// {
-	// 	std::cerr << "Error: " << e.what() << '\n';
-	// }
-
+	std::cout << BOLDGREEN << "[FOR ROBOTOMY REQUEST]" << RESET << std::endl;
+	try
+	{
+		Intern someRandomIntern;
+		Bureaucrat Z("Cindy", 5);
+		AForm* rrf;
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		delete rrf;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "Error: " << e.what() << '\n';
+	}
+	std::cout << BOLDGREEN << "[FOR SHRUBBERY CREATION]" << RESET << std::endl;
+	try
+	{
+		Intern anotherRandomIntern;
+		Bureaucrat X("Calvin", 5);
+		AForm* scf;
+		scf = anotherRandomIntern.makeForm("shrubbery creation", "Blender");
+		delete scf;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "Error: " << e.what() << '\n';
+	}
+	std::cout << BOLDGREEN << "[FOR PRESEDENTIAL PARDON]" << RESET << std::endl;
+	try
+	{
+		Intern yetanotherRandomIntern;
+		Bureaucrat W("Chris", 5);
+		AForm* ppf;
+		ppf = yetanotherRandomIntern.makeForm("presidential pardon", "Sender");
+		delete ppf;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "Error: " << e.what() << '\n';
+	}
+	std::cout << BOLDGREEN << "[FOR NONEXISTENT REQUEST]" << RESET << std::endl;
+	try
+	{
+		Intern otherRandomIntern;
+		Bureaucrat Y("Candy", 5);
+		AForm* nrf;
+		nrf = otherRandomIntern.makeForm("nonexistent request", "Lender");
+		delete nrf;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "Error: " << e.what() << '\n';
+	}
 }

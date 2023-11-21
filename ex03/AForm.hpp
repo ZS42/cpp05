@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:25:44 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/19 22:35:31 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/21 14:12:09 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # define BLUE    	"\033[34m"
 # define RED    	"\033[31m"
 # define RESET		"\033[0m"
+#define BOLDBLUE    "\033[1m\033[34m"
 
 #include <iostream>
 #include <string>

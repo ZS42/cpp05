@@ -6,7 +6,7 @@
 /*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:42:59 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/10 10:33:12 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/21 12:40:23 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 const char* Form::GradeTooHighException ::what() const throw()
 {
-	return ("Bureacrat grade is too high.");
+	return ("Form grade is too high.");
 }
 
 const char* Form::GradeTooLowException ::what() const throw()
 {
-	return ("Bureaucrat grade is too low.");
+	return ("Form grade is too low.");
 }
 
 Form::Form() : _name("name"), _signStatus(0), _gradeSign(1), _gradeExecute(2)

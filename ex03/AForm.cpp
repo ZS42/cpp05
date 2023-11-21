@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:42:59 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/19 22:35:12 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/21 14:02:21 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ AForm::AForm(std::string name, bool a, int b, int c) : _name(name), _signStatus(
 	else if (_gradeSign > 150 || _gradeExecute > 150)
 		throw(AForm::GradeTooLowException());
 
-	std::cout << AForm::getFormName() << " form parametric constructor called." << std::endl;
+	std::cout << AForm::getFormName() << " Aform parametric constructor called." << std::endl;
 }
 
 AForm::AForm(const AForm &object): _name(object._name), _signStatus(object._signStatus), _gradeSign(object._gradeSign), _gradeExecute(object._gradeExecute)
@@ -143,6 +143,6 @@ bool	AForm::canExecute(Bureaucrat const& bureaucrat) const
 
 std::ostream &operator<<( std::ostream& os, const AForm& rhs )
 {
-	os << "AForm: [" << rhs.getFormName() << "] form sign grade: [" << rhs.getGradeSign() << "] form execute grade: [" << rhs.getGradeExecute() << "] signed [" << rhs.getSignStatus() << "]";
+	os << std::boolalpha << "AForm: [" << rhs.getFormName() << "] form sign grade: [" << rhs.getGradeSign() << "] form execute grade: [" << rhs.getGradeExecute() << "] signed [" << rhs.getSignStatus() << "]";
 	return (os);
 }
