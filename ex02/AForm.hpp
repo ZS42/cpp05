@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:25:44 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/19 22:35:31 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/21 14:23:54 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ class AForm
 		void setSignStatus(bool signStatus);
 		void setGradeSign(const int gradeSign);
 		void setGradeExecute(const int gradeExecute);
-		bool	canExecute(const Bureaucrat& bureaucrat)const;
+		bool canExecute(const Bureaucrat& bureaucrat)const;
 		// making it equal to zero makes it a pure virtual function
         // and makes the class abstract so it cant be instantiated
 		virtual void execute(Bureaucrat const & executor) const = 0;

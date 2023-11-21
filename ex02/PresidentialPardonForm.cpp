@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 00:28:08 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/19 22:36:45 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/21 12:44:31 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target): AForm("Presi
 	std::cout << "PresidentialPardonForm parametric constructor called." << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &object)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &object): AForm("Presidential Pardon form", false, 25, 5)
 {
 	*this = object;
 	std::cout << "PresidentialPardonForm copy constructor called" << std::endl;
@@ -44,7 +44,7 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const
     if (canExecute(executor) == true)
     {
 	    executor.executeForm(*this);
-        std::cout << RED << _target << " has been pardoned by Zaphod Beeblebrox" << RESET << std::endl; 
+        std::cout << RED << _target << " has been pardoned by Zaphod Beeblebrox" << RESET << std::endl;
     }
 }
 

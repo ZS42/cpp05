@@ -6,7 +6,7 @@
 /*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:35:42 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/15 16:41:54 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/21 12:42:37 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void Bureaucrat::incrementGrade()
 	{
 		(this->_grade)--;
 		if (this->_grade < 1)
-			throw GradeTooHighException();{/* code */}
+			throw GradeTooHighException();
 	}
 	catch (std::exception & e)
 	{

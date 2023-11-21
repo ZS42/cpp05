@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:42:59 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/19 23:10:20 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/21 12:52:21 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ AForm::AForm(std::string name, bool a, int b, int c) : _name(name), _signStatus(
 	else if (_gradeSign > 150 || _gradeExecute > 150)
 		throw(AForm::GradeTooLowException());
 
-	std::cout << AForm::getFormName() << " parametric constructor called." << std::endl;
+	std::cout << AForm::getFormName() << " AForm parametric constructor called." << std::endl;
 }
 
 AForm::AForm(const AForm &object): _name(object._name), _signStatus(object._signStatus), _gradeSign(object._gradeSign), _gradeExecute(object._gradeExecute)
