@@ -6,7 +6,7 @@
 /*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 00:28:30 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/11/15 16:40:20 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/11/21 12:01:15 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,14 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	executor.executeForm(*this);
+	std::cout << "some drilling noises" << std:: endl;
+    srand(time(NULL));
+    int i = std::rand();
+    if (i % 2 == 0)
+        std::cout << RED << _target << " has been robotomised" << RESET << std::endl;
+    else
+        std::cout << RED << _target << " robotomy failed" << RESET << std::endl;
+    executor.executeForm(*this);
 }
 
 std::string RobotomyRequestForm::getTarget() const
